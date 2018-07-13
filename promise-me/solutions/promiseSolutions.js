@@ -48,8 +48,16 @@ const readFileAndConvertToSentenceAsync = (path) => {
   })
 }
 
+//reads the first file which contains the path for the second file
+//then reads the second file and return its content
+//then returns each word in that content on separate lines
+const readTwoFiles = (pathOne) => {
+  return readMyFileAsync(pathOne)
+    .then(pathTwo => {
+      return readMyFileAsync(pathTwo)
+    })
+    .then(content => content.split(' ').join('\n'))
+    .catch(err => console.error(err))
+}
 
-
-
-
-module.exports = { createMyFileAsync, readMyFileAsync, readFileAndConvertToSentenceAsync }
+module.exports = { createMyFileAsync, readMyFileAsync, readFileAndConvertToSentenceAsync, readTwoFiles }
