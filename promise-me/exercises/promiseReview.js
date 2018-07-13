@@ -30,6 +30,9 @@ const readFileAndConvertToSentenceAsync = (path) => {
   //TODO
 }
 
+
+// -------------promise chaining-------------
+
 //reads the first file which contains the path for the second file
 //then reads the second file and its content
 //then returns each word in that content on separate lines
