@@ -1,6 +1,5 @@
-// const { someSortOfFunction } = require('../exercises/callbackReview');
 const fs = require('fs')
-const { createMyFile, readMyFile, readFileAndConvertToSentence } = require('../solutions/callbackSolutions.js');
+const { createMyFile, readMyFile, readFileAndConvertToSentence } = require('../exercises/callbackReview.js');
 
 const filePath = __dirname + '/lib/callbackFile.txt';
 
@@ -8,7 +7,6 @@ describe('functions should would with via callback style', () => {
   afterEach(() => {
     fs.unlink(filePath, (err) => {
       if (err) { return }
-      console.log('callbackFile.txt was deleted')
     })
   })
   
