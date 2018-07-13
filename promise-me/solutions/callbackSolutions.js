@@ -4,6 +4,7 @@ Implement these functions following the node style callback pattern
 
 const fs = require('fs')
 
+//reads file at specified path and returns content
 const readMyFile = (path, callback) => {
   fs.readFile(path, 'utf8', (err, content) => {
     if (err) return callback(err, null)
@@ -11,6 +12,7 @@ const readMyFile = (path, callback) => {
   })
 }
 
+//creates and writes data(string) to specified path
 const createMyFile = (path, data, callback) => {
   fs.writeFile(path, data, (err) =>{
     if (err) return console.error(err)
@@ -18,7 +20,18 @@ const createMyFile = (path, data, callback) => {
   })
 }
 
-//takes in multi-line file and convert to a single line
+//reads a file that contains multi-line strings
+/*
+`let us
+make this
+into
+a promise`
+*/
+
+// and returns one single sentence
+/*
+"let us make this into a promise"
+*/
 const readFileAndConvertToSentence = (path, callback) => {
   readMyFile(path, (err, content) => {
     if (err) { callback(err, null) }
