@@ -49,8 +49,16 @@ const readFileAndConvertToSentenceAsync = (path) => {
 }
 
 //reads the first file which contains the path for the second file
-//then reads the second file and return its content
+//then reads the second file and its content
 //then returns each word in that content on separate lines
+/*
+pathOne contains "../test/lib/example.js"
+pathTwo contains "hello word"
+returns 
+`hello
+world`
+*/
+
 const readTwoFiles = (pathOne) => {
   return readMyFileAsync(pathOne)
     .then(pathTwo => {
