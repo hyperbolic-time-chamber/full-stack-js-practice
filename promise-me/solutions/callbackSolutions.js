@@ -18,6 +18,4 @@ const createMyFile = (path, data, callback) => {
   })
 }
 
-createMyFile('./testing.txt', 'hello', () => console.log('done'))
-
 module.exports = { createMyFile, readMyFile }
