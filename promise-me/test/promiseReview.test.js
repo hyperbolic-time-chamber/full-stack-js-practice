@@ -1,5 +1,5 @@
 const fs = require('fs')
-const { createMyFileAsync, readMyFileAsync, readFileAndConvertToSentenceAsync, readTwoFiles } = require('../solutions/promiseSolutions.js');
+const { createMyFileAsync, readMyFileAsync, readFileAndConvertToSentenceAsync, readTwoFiles } = require('../exercises/promiseReview.js');
 
 const filePath = __dirname + '/lib/promiseFile.txt'
 const filePathTwo = __dirname + '/lib/promiseFileTwo.txt'
@@ -8,7 +8,6 @@ describe('functions should would with via promise style', () => {
   afterEach(() => {
     fs.unlink(filePath, (err) => {
       if (err) { return }
-      console.log('promiseFile.txt was deleted')
     })
   })
 
