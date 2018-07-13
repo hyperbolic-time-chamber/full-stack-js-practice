@@ -1,7 +1,8 @@
 const fs = require('fs')
-const { createMyFileAsync, readMyFileAsync, readFileAndConvertToSentenceAsync } = require('../solutions/promiseSolutions.js');
+const { createMyFileAsync, readMyFileAsync, readFileAndConvertToSentenceAsync, readTwoFiles } = require('../solutions/promiseSolutions.js');
 
 const filePath = __dirname + '/lib/promiseFile.txt'
+const filePathTwo = __dirname + '/lib/promiseFileTwo.txt'
 
 describe('functions should would with via promise style', () => {
   afterEach(() => {
@@ -55,4 +56,38 @@ describe('functions should would with via promise style', () => {
         done();
       })
   })
+})
+
+describe('functions should would with via promise style', () => {
+  beforeEach(() => {
+    fs.writeFile(filePath, filePathTwo, (err) => {
+      if (err) { return }
+    })
+    fs.writeFile(filePathTwo, 'this is from second file', (err) => {
+      if (err) { return }
+    })
+  })
+
+  afterEach(() => {
+    fs.unlink(filePath, (err) => {
+      if (err) { return }
+      fs.unlink(filePathTwo, (err) => {
+        if (err) { return }
+      })
+    })
+  })
+
+  test('should be able to chain two readfiles', (done) => {
+    return readTwoFiles(filePath)
+      .then(content => {
+        expect(content).toEqual('this\nis\nfrom\nsecond\nfile')
+        done()
+      })
+      .catch(err => {
+        console.error(err)
+        done()
+      })
+  })
+
+
 })
