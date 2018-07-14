@@ -1,0 +1,32 @@
+{
+    "name": "angularjs_api_fetcher",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "karma start"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/l1fb/AngularJS-API-Fetcher.git"
+    },
+    "author": "David Yonwook Chung",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/l1fb/AngularJS-API-Fetcher/issues"
+    },
+    "homepage": "https://github.com/l1fb/AngularJS-API-Fetcher#readme",
+    "devDependencies": {
+      "angular-mocks": "^1.7.2",
+      "jasmine-core": "^3.1.0",
+      "jquery": "^3.3.1",
+      "karma": "^2.0.4",
+      "karma-chrome-launcher": "^2.2.0",
+      "karma-jasmine": "^1.1.2",
+      "lodash": "^4.17.10"
+    },
+    "dependencies": {
+      "angular": "^1.7.2"
+    }
+  }
+  
