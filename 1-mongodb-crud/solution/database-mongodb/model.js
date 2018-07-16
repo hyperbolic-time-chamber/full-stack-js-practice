@@ -1,12 +1,14 @@
-const mongoose = require('mongoose');
-const db = require('./index');
+/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
 
-const Schema = mongoose.Schema;
+var mongoose = require('mongoose');
+var db = require('./index');
 
-const toDoListSchema = new Schema({
-  name: { type: String, maxlength: 50, required: true, unique: true },
+var Schema = mongoose.Schema;
+
+var toDoListSchema = new Schema({
+  name: { type: String, maxlength: 50, required: true },
 });
 
-const ToDoList = db.model('ToDoList', toDoListSchema);
+var ToDoList = db.model('ToDoList', toDoListSchema);
 
 module.exports = ToDoList;

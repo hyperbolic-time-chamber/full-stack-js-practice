@@ -1,8 +1,10 @@
-const mongoose = require('mongoose');
+/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
+
+var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/toDoList');
 
-const db = mongoose.connection;
+var db = mongoose.connection;
 
 db.on(
   'error',

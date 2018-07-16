@@ -1,10 +1,12 @@
+/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
+
 // include mongoose in our project
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 // open connection to the database on our locally running instance of MongoDB
 mongoose.connect('mongodb://localhost/toDoList');
 
-const db = mongoose.connection;
+var db = mongoose.connection;
 
 // get notified if we connect succesffuly or if a connection error occurs
 db.on(

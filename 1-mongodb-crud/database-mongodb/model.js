@@ -1,16 +1,18 @@
+/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
+
 // include mongoose in our project
-const mongoose = require('mongoose');
-const db = require('./index');
+var mongoose = require('mongoose');
+var db = require('./index');
 
 // get a reference to Schema
-const Schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 
 // define your toDoListSchema
-const toDoListSchema = new Schema({
-  name: { type: String, maxlength: 50, required: true, unique: true },
+var toDoListSchema = new Schema({
+  name: { type: String, maxlength: 50, required: true },
 });
 
 // compile the schema into a Model
-const ToDoList = db.model('ToDoList', toDoListSchema);
+var ToDoList = db.model('ToDoList', toDoListSchema);
 
 module.exports = ToDoList;
