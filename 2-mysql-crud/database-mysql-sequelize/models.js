@@ -17,8 +17,12 @@ var Todo = connection.define(
 
 connection
   .sync({ force: false })
-  .then(() => console.log('successfully synced database'))
-  .catch(err => console.log('error syncing database ', err));
+  .then(function() {
+    console.log('successfully synced database');
+  })
+  .catch(function(err) {
+    console.log('error syncing database ', err);
+  });
 
 module.exports = {
   Todo,

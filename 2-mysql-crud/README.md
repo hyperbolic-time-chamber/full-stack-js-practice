@@ -24,6 +24,8 @@ If using Mac / Homebrew: Follow these [instructions](https://stackoverflow.com/a
 
 If using Windows: Manually uninstall MySQL 8 then install MySQL 5.7.
 
+There is no front-end for this app. Use [Postman](https://www.getpostman.com/) to debug it.
+
 ## Your Task
 
 All of your work will be in the following files:
@@ -32,6 +34,8 @@ All of your work will be in the following files:
 - `server/sequelize/controller.js`
 
 You are to implement the CRUD methods in the controller. You can run your tests to ensure your methods are working correctly. Instructions below for running tests.
+
+As an added challenge, consider refactoring your solution to make use of ES6 arrow functions and const / let variable declarations.
 
 ### No ORM
 

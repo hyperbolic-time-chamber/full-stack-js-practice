@@ -23,8 +23,9 @@ module.exports = {
   },
 
   update: function(req, res) {
-    var { name, newName } = req.body;
-    Todo.update({ name: newName }, { where: { name } })
+    var { todo } = req.body;
+    var { id } = req.params;
+    Todo.update({ name: todo }, { where: { id } })
       .then(() => {
         res.status(202).send('updated');
       })
@@ -34,9 +35,9 @@ module.exports = {
   },
 
   delete: function(req, res) {
-    var { name } = req.query;
+    var { id } = req.params;
     Todo.destroy({
-      where: { name },
+      where: { id },
     })
       .then(function(result) {
         res.status(202).send('deleted');

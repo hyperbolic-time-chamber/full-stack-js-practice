@@ -1,55 +1,53 @@
+/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
+
 const request = require('supertest');
 const { app } = require('../server/server');
 const { connection } = require('../database-mysql-sequelize');
 
-describe('Test controllers', () => {
-  test('It should retrieve todos from database', done => {
+describe('Test controllers', function() {
+  test('It should retrieve todos from database', function(done) {
     request(app)
       .get('/todolist')
-      .then(response => {
+      .then(function(response) {
         expect(response.statusCode).toBe(200);
         done();
       });
   });
 
-  test('It should add a new todo to database', done => {
+  test('It should add a new todo to database', function(done) {
     request(app)
       .post('/todolist')
       .send({
         name: 'Testing post',
       })
-      .then(response => {
+      .then(function(response) {
         expect(response.statusCode).toBe(201);
         done();
       });
   });
 
-  test('It should update a todo in database', done => {
+  test('It should update a todo in database', function(done) {
     request(app)
-      .put('/todolist')
+      .put('/todolist/1')
       .send({
-        name: 'Testing post',
-        newName: 'Updating post',
+        todo: 'Testing post',
       })
-      .then(response => {
+      .then(function(response) {
         expect(response.statusCode).toBe(202);
         done();
       });
   });
 
-  test('It should delete a todo in database', done => {
+  test('It should delete a todo in database', function(done) {
     request(app)
-      .delete('/todolist')
-      .query({
-        name: 'Testing post',
-      })
-      .then(response => {
+      .delete('/todolist/1')
+      .then(function(response) {
         expect(response.statusCode).toBe(202);
         done();
       });
   });
 
-  afterAll(() => {
+  afterAll(function() {
     connection.close();
   });
 });
