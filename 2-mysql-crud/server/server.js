@@ -1,5 +1,3 @@
-/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
-
 var express = require('express');
 var bodyParser = require('body-parser');
 var { routes } = require('./routes');

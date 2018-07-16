@@ -1,8 +1,8 @@
-const routes = require('express').Router();
-const controller = require('./controller');
+var routes = require('express').Router();
+var controller = require('./controller');
 
 routes
-  .route('/toDoList')
+  .route('/todolist')
   .get(controller.read)
   .post(controller.create)
   .put(controller.update)

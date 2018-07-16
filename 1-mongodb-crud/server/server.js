@@ -1,9 +1,9 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+var express = require('express');
+var bodyParser = require('body-parser');
 
-const { routes } = require('./routes');
+var { routes } = require('./routes');
 
-const app = express();
+var app = express();
 
 // middleware
 app.use(bodyParser.json());
