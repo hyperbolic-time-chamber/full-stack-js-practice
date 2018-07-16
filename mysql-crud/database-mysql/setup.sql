@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS todo_list;
+
+CREATE DATABASE todo_list;
