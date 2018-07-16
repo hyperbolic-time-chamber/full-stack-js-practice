@@ -24,9 +24,16 @@ If using Mac / Homebrew: Follow these [instructions](https://stackoverflow.com/a
 
 If using Windows: Manually uninstall MySQL 8 then install MySQL 5.7.
 
-### No ORM
+## Your Task
 
-Run `mysql -u root < database-mysql/schema.sql` in your terminal to create your schema once you've written them out in schema.sql
+All of your work will be in the following files:
+
+- `server/controller.js`
+- `server/sequelize/controller.js`
+
+You are to implement the CRUD methods in the controller. You can run your tests to ensure your methods are working correctly. Instructions below for running tests.
+
+### No ORM
 
 To run tests for No ORM, ensure your server is running and run `npm run test:no-orm`.
 
