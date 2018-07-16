@@ -1,5 +1,3 @@
-/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
-
 const ToDoList = require('../database-mongodb/model');
 
 module.exports = {
