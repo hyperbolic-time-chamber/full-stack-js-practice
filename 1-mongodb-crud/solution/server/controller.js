@@ -3,7 +3,7 @@
 const ToDoList = require('../database-mongodb/model');
 
 module.exports = {
-  //  Read all (cRud) -- collection
+  /* Retrieve all documents. */
   read: function(req, res) {
     ToDoList.find({}).exec(function(err, result) {
       if (err) {
@@ -13,7 +13,7 @@ module.exports = {
     });
   },
 
-  //  Create (Crud) -- collection
+  /* Create one document. */
   create: function(req, res) {
     const { name } = req.body;
     const toDo = new ToDoList({ name });
@@ -27,7 +27,7 @@ module.exports = {
     });
   },
 
-  // Update (crUd) -- member
+  /* Update one document by name. */
   update: function(req, res) {
     const { name, newName } = req.body;
     ToDoList.findOneAndUpdate(
@@ -45,7 +45,7 @@ module.exports = {
     );
   },
 
-  // Delete (cruD) -- member
+  /* Delete one document by name. */
   delete: function(req, res) {
     const { name } = req.body;
     ToDoList.findOneAndRemove({ name }, function(err) {
