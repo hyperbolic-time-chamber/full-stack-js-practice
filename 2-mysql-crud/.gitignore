@@ -1,0 +1,3 @@
+/node_modules
+/database-mysql/config.js
+/database-mysql-sequelize/config.js
