@@ -16,10 +16,8 @@ You will implement the database layer of an already running Express app. Specifi
 
 You will complete a series of problems using callbacks. You will then promisify these callbacks using the native Promise API and complete the same exercises using promises.
 
-## 4 - React API Fetcher
+## How To Use This Repo
 
-You are to create a React app. You will fetch data from a public API, render, and implement some interactive features e.g. clicking on a picture will...do someting...and you should also be able to filter the data.
+Fork and clone down.
 
-## 5 - AngularJS API Fetcher
-
-You are to create an AngularJS app. You will fetch data from a public API, render, and implement some interactive features e.g. clicking on a picture will...do someting...and you should also be able to filter the data.
+`cd` into appropriate directory, read the `README`, and begin your work.
