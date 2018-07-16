@@ -35,6 +35,8 @@ All of your work will be in the following files:
 
 You are to implement the CRUD methods in the controller. You can run your tests to ensure your methods are working correctly. Instructions below for running tests.
 
+Pay attention to the `server/routes.js` file to see what the endpoint/s is/are for each CRUD operation.
+
 As an added challenge, consider refactoring your solution to make use of ES6 arrow functions and const / let variable declarations.
 
 ### No ORM
