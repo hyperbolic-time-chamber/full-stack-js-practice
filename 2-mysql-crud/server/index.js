@@ -1,7 +1,9 @@
-const { app } = require('./server');
+/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
 
-const port = 3000;
+var { app } = require('./server');
 
-app.listen(port, () => {
-  console.log(`listening on post ${port}`);
+var port = 3000;
+
+app.listen(port, function() {
+  console.log(`Listening on PORT ${port}...`);
 });
