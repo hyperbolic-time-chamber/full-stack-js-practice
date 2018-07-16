@@ -1,5 +1,3 @@
-/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
-
 // include mongoose in our project
 var mongoose = require('mongoose');
 var db = require('./index');

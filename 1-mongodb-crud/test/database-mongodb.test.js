@@ -1,5 +1,3 @@
-/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
-
 var request = require('supertest');
 var { app } = require('../server/server');
 var db = require('../database-mongodb/index');
