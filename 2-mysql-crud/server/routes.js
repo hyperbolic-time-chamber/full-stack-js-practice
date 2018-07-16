@@ -3,10 +3,10 @@
 var routes = require('express').Router();
 
 /* Uncomment for no ORM */
-var controller = require('./controller.solution');
+// var controller = require('./controller.solution');
 
 /* Uncomment for Sequelize */
-// var controller = require('./sequelize/controller');
+var controller = require('./sequelize/controller.solution');
 
 routes
   .route('/todolist')

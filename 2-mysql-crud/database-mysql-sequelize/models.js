@@ -1,8 +1,10 @@
-const Sequelize = require('sequelize');
+/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
 
-const { connection } = require('./');
+var Sequelize = require('sequelize');
 
-const todo = connection.define(
+var { connection } = require('./');
+
+var Todo = connection.define(
   'todo',
   {
     name: {
@@ -19,5 +21,5 @@ connection
   .catch(err => console.log('error syncing database ', err));
 
 module.exports = {
-  todo,
+  Todo,
 };

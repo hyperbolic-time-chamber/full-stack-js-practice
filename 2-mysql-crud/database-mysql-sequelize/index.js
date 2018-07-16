@@ -1,16 +1,15 @@
-const mysql = require('mysql');
-const Sequelize = require('sequelize');
+/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
 
-const connection = new Sequelize('todo_list', 'root', '', {
-  host: 'localhost',
-  dialect: 'mysql',
-});
+const connection = require('./config');
 
 connection
   .authenticate()
-  .then(() => console.log('successfully authenticated connected'))
-  .catch(err => console.log('error authenticating connection'));
-  
+  .then(function() {
+    console.log('successfully authenticated connected');
+  })
+  .catch(function(err) {
+    console.log('error authenticating connection', err);
+  });
 
 module.exports = {
   connection,
