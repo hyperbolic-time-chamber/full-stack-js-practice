@@ -26,9 +26,10 @@ module.exports = {
   },
 
   update: function(req, res) {
-    var { name, newName } = req.body;
+    var { todo } = req.body;
+    var { id } = req.params;
     connection.query(
-      `UPDATE todos SET name = '${newName}' WHERE name = '${name}'`,
+      `UPDATE todos SET name = '${todo}' WHERE id = '${id}'`,
       function(err, result) {
         if (err) {
           return res.status(400).send(err);
@@ -39,8 +40,8 @@ module.exports = {
   },
 
   delete: function(req, res) {
-    var { name } = req.query;
-    connection.query(`DELETE FROM todos WHERE name = '${name}'`, function(
+    var { id } = req.params;
+    connection.query(`DELETE FROM todos WHERE id = '${id}'`, function(
       err,
       result,
     ) {
