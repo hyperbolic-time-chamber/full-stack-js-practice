@@ -1,9 +1,11 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
 
-const { routes } = require('./routes');
+var express = require('express');
+var bodyParser = require('body-parser');
 
-const app = express();
+var { routes } = require('./routes');
+
+var app = express();
 
 // middleware
 app.use(bodyParser.json());

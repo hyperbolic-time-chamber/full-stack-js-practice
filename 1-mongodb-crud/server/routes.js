@@ -1,5 +1,7 @@
-const routes = require('express').Router();
-const controller = require('./controller');
+/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
+
+var routes = require('express').Router();
+var controller = require('./controller');
 
 routes
   .route('/todolist')

@@ -4,19 +4,20 @@ const ToDoList = require('../database-mongodb/model');
 
 module.exports = {
   //  Read all (cRud) -- collection
-  read: (req, res) => {
-    ToDoList.find({}).exec((err, result) => {
+  read: function(req, res) {
+    ToDoList.find({}).exec(function(err, result) {
       if (err) {
         res.status(400).send('Error on fetching data');
       }
       res.status(200).send(result);
     });
   },
+
   //  Create (Crud) -- collection
-  create: (req, res) => {
+  create: function(req, res) {
     const { name } = req.body;
     const toDo = new ToDoList({ name });
-    toDo.save((err, product) => {
+    toDo.save(function(err, product) {
       if (err) {
         console.error(err);
         res.status(400).send(`Error on creating ${name}`);
@@ -25,14 +26,15 @@ module.exports = {
       }
     });
   },
+
   // Update (crUd) -- member
-  update: (req, res) => {
+  update: function(req, res) {
     const { name, newName } = req.body;
     ToDoList.findOneAndUpdate(
       { name },
       { $set: { name: newName } },
       { new: true },
-      (err, doc) => {
+      function(err, doc) {
         if (err) {
           console.error(err);
           res.status(400).send(`Error on updating ${name} to ${newName}`);
@@ -42,10 +44,11 @@ module.exports = {
       },
     );
   },
+
   // Delete (cruD) -- member
-  delete: (req, res) => {
+  delete: function(req, res) {
     const { name } = req.body;
-    ToDoList.findOneAndRemove({ name }, err => {
+    ToDoList.findOneAndRemove({ name }, function(err) {
       if (err) {
         console.error(err);
         res.status(400).send(`Error on deleting ${name}`);
