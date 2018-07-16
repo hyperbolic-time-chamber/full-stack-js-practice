@@ -1,9 +1,6 @@
-/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
-
-const request = require('supertest');
-const { app } = require('../server/server');
-
-const { connection } = require('../database-mysql');
+var request = require('supertest');
+var { app } = require('../server/server');
+var { connection } = require('../database-mysql');
 
 describe('Test controllers', function() {
   test('It should retrieve todos from database', function(done) {
