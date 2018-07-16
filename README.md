@@ -12,7 +12,7 @@ You will implement the database layer of an already running Express app. Specifi
 
 You will implement the database layer of an already running Express app. Specifically, you will implement all CRUD operations (Create, Read, Update, Delete). This time you will be using MySQL only (using the mysql npm module). You may refactor to use Sequelize if you wish but only after implementing CRUD using just MySQL.
 
-## 3 - Callbacks and Promises
+## 3 - Promise Me
 
 You will complete a series of problems using callbacks. You will then promisify these callbacks using the native Promise API and complete the same exercises using promises.
 
