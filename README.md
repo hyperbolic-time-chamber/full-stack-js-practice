@@ -23,7 +23,3 @@ You are to create a React app. You will fetch data from a public API, render, an
 ## 5 - AngularJS API Fetcher
 
 You are to create an AngularJS app. You will fetch data from a public API, render, and implement some interactive features e.g. clicking on a picture will...do someting...and you should also be able to filter the data.
-
-## 6 - Express Routing
-
-You will implement routing in an express server. Each route yields a different resource. All resources are stored in text files. You may need to make use of the file system to read these files and retrieve the data for the appropriate route.
