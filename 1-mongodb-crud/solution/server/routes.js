@@ -2,7 +2,7 @@ const routes = require('express').Router();
 const controller = require('./controller');
 
 routes
-  .route('/toDoList')
+  .route('/todolist')
   .get(controller.read)
   .post(controller.create)
   .put(controller.update)

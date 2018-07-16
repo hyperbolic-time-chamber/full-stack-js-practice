@@ -1,5 +1,3 @@
-/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
-
 var { Todo } = require('../../database-mysql-sequelize/models');
 
 module.exports = {

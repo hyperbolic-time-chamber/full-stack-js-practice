@@ -1,6 +1,4 @@
-/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
-
-const connection = require('./config');
+var connection = require('./config');
 
 connection
   .authenticate()

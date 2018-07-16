@@ -1,5 +1,3 @@
-/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
-
 var routes = require('express').Router();
 
 /* Uncomment for no ORM */
