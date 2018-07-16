@@ -1,22 +1,25 @@
+/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
+
 const { todo } = require('../../database-mysql-sequelize/models');
 
 module.exports = {
-  read: (req, res) => {
-    todo.findAll({}).then(result => {
+  read: function(req, res) {
+    todo.findAll({}).then(function(result) {
       res.status(200).send(result);
     });
   },
-  create: (req, res) => {
+
+  create: function(req, res) {
     const { name } = req.body;
     todo
       .findOne({ where: { name } })
-      .then(result => {
+      .then(function(result) {
         if (!result) {
           todo
             .create({
               name,
             })
-            .then(result => {
+            .then(function(result) {
               res.status(201).send(result);
             })
             .catch(err => {
@@ -28,7 +31,8 @@ module.exports = {
         console.error(err);
       });
   },
-  update: (req, res) => {
+
+  update: function(req, res) {
     const { name, newName } = req.body;
     todo
       .update({ name: newName }, { where: { name } })
@@ -39,13 +43,14 @@ module.exports = {
         console.error(err);
       });
   },
-  delete: (req, res) => {
+
+  delete: function(req, res) {
     const { name } = req.query;
     todo
       .destroy({
         where: { name },
       })
-      .then(result => {
+      .then(function(result) {
         res.status(202).send('deleted');
       })
       .catch(err => {

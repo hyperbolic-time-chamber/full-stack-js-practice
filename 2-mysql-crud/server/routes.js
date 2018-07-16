@@ -1,10 +1,12 @@
-const routes = require('express').Router();
+/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var, object-shorthand  */
 
-// Uncomment for no ORM
-const controller = require('./controller');
+var routes = require('express').Router();
 
-// Uncomment for Sequelize
-// const controller = require('./sequelize/controller');
+/* Uncomment for no ORM */
+var controller = require('./controller.solution');
+
+/* Uncomment for Sequelize */
+// var controller = require('./sequelize/controller');
 
 routes
   .route('/todolist')
