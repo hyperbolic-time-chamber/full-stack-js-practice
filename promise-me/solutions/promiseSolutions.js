@@ -1,30 +1,32 @@
-/*
-Implement these functions following the new Promise pattern
-*/
+var fs = require('fs');
 
-const fs = require('fs')
+// reads file at specified path and returns content
+var readMyFileAsync = function(path) {
+  return new Promise(function(resolve, reject) {
+    fs.readFile(path, 'utf8', function(err, content) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(content);
+      }
+    });
+  });
+};
 
-//reads file at specified path and returns content
-const readMyFileAsync = (path) => {
-  return new Promise((resolve, reject) => {
-      fs.readFile(path, 'utf8', (err, content) => {
-      if (err) { reject(err) }
-      else { resolve(content) }
-    })
-  })
-}
+// creates and writes data(string) to specified path
+var createMyFileAsync = function(path, data) {
+  return new Promise(function(resolve, reject) {
+    fs.writeFile(path, data, function(err) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    });
+  });
+};
 
-//creates and writes data(string) to specified path
-const createMyFileAsync = (path, data) => {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(path, data, (err) => {
-      if (err) { reject(err) }
-      else { resolve() }
-    })
-  })
-}
-
-//reads a file that contains multi-line strings
+// reads a file that contains multi-line strings
 /*
 `let us
 make this
@@ -36,38 +38,23 @@ a promise`
 /*
 "let us make this into a promise"
 */
-const readFileAndConvertToSentenceAsync = (path) => {
-  return new Promise((resolve, reject) => {
-    fs.readFile(path, 'utf8', (err, content) => {
-      if (err) { reject(err) }
-      else { 
-        let sentence = content.split('\n').join(' ')
-        resolve(sentence)
+var readFileAndConvertToSentenceAsync = function(path) {
+  return new Promise(function(resolve, reject) {
+    fs.readFile(path, 'utf8', function(err, content) {
+      if (err) {
+        reject(err);
+      } else {
+        var sentence = content.split('\n').join(' ');
+        resolve(sentence);
       }
-    })
-  })
-}
+    });
+  });
+};
 
-// -------------promise chaining-------------
+/* Be sure you understand how to chain two promises. */
 
-//reads the first file which contains the path for the second file
-//then reads the second file and its content
-//then returns each word in that content on separate lines
-/*
-pathOne contains "../test/lib/example.js"
-pathTwo contains "hello word"
-returns 
-`hello
-world`
-*/
-
-const readTwoFiles = (pathOne) => {
-  return readMyFileAsync(pathOne)
-    .then(pathTwo => {
-      return readMyFileAsync(pathTwo)
-    })
-    .then(content => content.split(' ').join('\n'))
-    .catch(err => console.error(err))
-}
-
-module.exports = { createMyFileAsync, readMyFileAsync, readFileAndConvertToSentenceAsync, readTwoFiles }
+module.exports = {
+  createMyFileAsync,
+  readMyFileAsync,
+  readFileAndConvertToSentenceAsync,
+};

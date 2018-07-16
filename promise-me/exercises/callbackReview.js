@@ -1,33 +1,37 @@
+/* Implement these functions following the Node.js callback pattern. */
+
+var fs = require('fs');
+
+/* Reads the contents of a file at a specified path. */
+var readMyFile = function(path, callback) {
+  // TODO
+};
+
+/* Creates and writes data(string) to specified path. */
+var createMyFile = function(path, data, callback) {
+  // TODO
+};
+
 /*
-Implement these functions following the node style callback pattern
+Reads a file that contains multi-line strings and returns one single sentence.
+
+For example:
+
+`buy it
+use it
+break it
+fix it
+trash it
+change it
+mail
+upgrade it`
+
+becomes
+
+`buy it use it break it fix it trash it change it mail upgrade it`
 */
+var readFileAndConvertToSentence = function(path, callback) {
+  // TODO
+};
 
-const fs = require('fs')
-
-//reads file at specified path and returns content
-const readMyFile = (path, callback) => {
-  //TODO
-}
-
-//creates and writes data(string) to specified path
-const createMyFile = (path, data, callback) => {
-  //TODO
-}
-
-//reads a file that contains multi-line strings
-/*
-`let us
-make this
-into
-a promise`
-*/
-
-// and returns one single sentence
-/*
-"let us make this into a promise"
-*/
-const readFileAndConvertToSentence = (path, callback) => {
-  //TODO
-}
-
-module.exports = { createMyFile, readMyFile, readFileAndConvertToSentence }
+module.exports = { createMyFile, readMyFile, readFileAndConvertToSentence };
