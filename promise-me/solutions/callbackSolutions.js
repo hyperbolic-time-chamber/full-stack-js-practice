@@ -1,45 +1,52 @@
+/* eslint-disable prefer-arrow-callback, no-undef, func-names, no-var  */
+
+/* Implement these functions following the Node.js callback pattern. */
+
+var fs = require('fs');
+
+/* Reads the contents of a file at a specified path. */
+var readMyFile = function(path, callback) {
+  fs.readFile(path, 'utf8', function(err, content) {
+    if (err) return callback(err, null);
+    callback(null, content);
+  });
+};
+
+/* Creates and writes data(string) to specified path. */
+var createMyFile = (path, data, callback) => {
+  fs.writeFile(path, data, function(err) {
+    if (err) return console.error(err);
+    callback();
+  });
+};
+
 /*
-Implement these functions following the node style callback pattern
+Reads a file that contains multi-line strings and returns one single sentence.
+
+For example:
+
+`buy it
+use it
+break it
+fix it
+trash it
+change it
+mail
+upgrade it`
+
+becomes
+
+`buy it use it break it fix it trash it change it mail upgrade it`
 */
-
-const fs = require('fs')
-
-//reads file at specified path and returns content
-const readMyFile = (path, callback) => {
-  fs.readFile(path, 'utf8', (err, content) => {
-    if (err) return callback(err, null)
-    callback(null, content)
-  })
-}
-
-//creates and writes data(string) to specified path
-const createMyFile = (path, data, callback) => {
-  fs.writeFile(path, data, (err) =>{
-    if (err) return console.error(err)
-    callback()
-  })
-}
-
-//reads a file that contains multi-line strings
-/*
-`let us
-make this
-into
-a promise`
-*/
-
-// and returns one single sentence
-/*
-"let us make this into a promise"
-*/
-const readFileAndConvertToSentence = (path, callback) => {
-  readMyFile(path, (err, content) => {
-    if (err) { callback(err, null) }
-    else {
-      let sentence = content.split('\n').join(' ')
-      callback(null, sentence) 
+var readFileAndConvertToSentence = function(path, callback) {
+  readMyFile(path, function(err, content) {
+    if (err) {
+      callback(err, null);
+    } else {
+      var sentence = content.split('\n').join(' ');
+      callback(null, sentence);
     }
-  })
-}
+  });
+};
 
-module.exports = { createMyFile, readMyFile, readFileAndConvertToSentence }
+module.exports = { createMyFile, readMyFile, readFileAndConvertToSentence };
