@@ -6,9 +6,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      description: "",
-      location: "",
-      fulltime: false,
+      description: "", //description: 'node', 'ruby', 'java'
+      location: "", //location: city name, zip code, or other location search term
+      fulltime: false, //false or true
       jobs: []
     }
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -27,19 +27,15 @@ class App extends Component {
     e.preventDefault();
     let endpoint = `https://jobs.github.com/positions.json?description=${this.state.description}&location=${this.state.location}`;
     this.state.fulltime && (endpoint += '&full_time=true');
-    console.log(endpoint);
     const payload = { url: endpoint }
     axios.post('/api/jobs', payload)
       .then( response => {
         this.setState({jobs: response.data})
+        console.log(this.state.jobs);
       })
       .catch( err => console.error(err));
   }
-  //description: 'node', 'ruby', 'java'
-  //location: city name, zip code, or other location search term
-  //lat
-  //long
-  //full_time: set to true
+
   render() {
     return(
       <div>
@@ -51,7 +47,7 @@ class App extends Component {
           <input type="submit" value="Submit"/>
         </form>
 
-        <JobList />
+        <JobList jobs={this.state.jobs}/>
       </div>
     )
   }

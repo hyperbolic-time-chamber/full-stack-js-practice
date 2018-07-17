@@ -1,21 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import JobListEntry from './JobListEntry';
 
-class JobList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    }
-  }
-
-  render() {
-    return(
-      <div>
-        <JobListEntry />
-      </div>
-    )
-  }
+const JobList = props => {
+  return(
+    <div className="job-list-container">
+      {props.jobs.map( (job, i) => {
+        return <JobListEntry key={i} job={job}/>
+      })}
+    </div>
+  )
 }
 
 export default JobList
