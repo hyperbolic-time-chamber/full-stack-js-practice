@@ -20,7 +20,7 @@
     "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
     "path": "^0.12.7",
-    "sequelize": "^4.44.3",
+    "sequelize": "^5.15.1",
     "supertest": "^3.1.0"
   },
   "devDependencies": {
